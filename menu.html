@@ -1,0 +1,1071 @@
+<!doctype html> 
+<html lang="en">
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <!-- Bootstrap CSS --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <!-- font fam -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>    
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <title>Practice page</title> 
+    
+    <link href="CSS/reset.css" type="text/css" rel="stylesheet">
+        
+    <!-- main styles -->
+
+    <style>
+      html {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      
+      @media (min-width: 992px) {
+        html {
+          font-size: 18px;
+        }
+      }
+      
+      @media (min-width: 1800px) {
+        html {
+          font-size: 22px;
+        }
+      }
+    
+     a {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      a:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+      
+      header {
+        width: 100%;
+        height: 100vh;
+        padding: 2rem 1rem 1rem;
+        position: relative;
+        background-image: url(assets/full-bg.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+      }
+      
+      .full-bg {
+        height: auto;
+        width: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      
+      .slogan {
+        position: relative;
+        z-index: 10;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        max-width: 25rem;
+        height: auto;
+      }
+      
+      .nav-row {
+        position: relative;
+        top: 100%;
+        margin: 0 15rem;
+        display: none;
+      }
+      
+      .nav-btn {
+        font-family: "roboto slab";
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        color: whitesmoke;
+        border-bottom: solid .125rem whitesmoke;
+        border-bottom-color: transparent;
+        padding-bottom: .7rem;
+        transition: all .5s ease;
+      }
+      
+      .nav-btn:hover {
+        border-bottom-color: whitesmoke;
+        padding-bottom: .3rem;
+        transform: translateY(-20%);
+        cursor: pointer;
+      }
+      
+      .lang-whole-wrap {
+        display: none;
+      }
+      
+      .lang-wrap {
+        height: 5.5rem;
+        width: 5.5rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        margin: 0;
+        background-color: transparent;
+        transition: all .5s ease;
+      }
+      
+      .lang-wrap02 {
+        bottom: 5.5rem;
+        background-image: url(assets/header_bg.png);
+        background-position: center center;
+        background-size: cover;
+        transform: translateX(100%);
+      }
+      
+      .lang-wrap01 {
+        bottom: 11rem;
+        background-image: url(assets/header_bg.png);
+        background-position: center center;
+        background-size: cover;
+        transform: translateX(100%);
+      }
+      
+      .lang-btn {
+        color: rgba(150,150,150,.8);
+        font-family: "roboto slab";
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 5.5rem;
+        transition: all .3s ease;
+      }
+      
+      .lang-whole-wrap:hover .lang-wrap {
+        cursor: pointer;
+        background-image: url(assets/header_bg.png);
+        background-position: center center;
+        background-size: cover;
+      }
+      
+      .lang-whole-wrap:hover .lang-wrap {
+        transform: translateX(0);
+        cursor: pointer;
+      }
+      
+      .lang-wrap02:hover,
+      .lang-wrap01:hover {
+        transform: translateX(0);
+        cursor: pointer;
+      }
+      
+      .lang-wrap:hover .lang-btn,
+      .lang-wrap02:hover .lang-btn,
+      .lang-wrap01:hover .lang-btn {
+        color: whitesmoke;
+      }
+      
+      .trigger-wrap {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 2.5rem;
+        height: 1.5rem;
+        z-index: 101;
+      }
+      
+      .trigger-menu-btn {
+        background: whitesmoke;
+        height: .3rem;
+        width: 2.5rem;
+        border-radius: .175rem;
+        position: absolute;
+        top: calc(50% - .15rem);
+        z-index: 11;
+      }
+      
+      .trigger-menu-btn::before,
+      .trigger-menu-btn::after {
+        content: '';
+        position: absolute;
+        background: whitesmoke;
+        width: 2.5rem;
+        height: .3rem;
+        transform: translateY(-200%);
+        border-radius: .175rem;
+        transition: all .3s ease;
+      }
+      
+      .trigger-menu-btn::after {
+        transform: translateY(200%);
+      }
+      
+      .trigger-wrap:hover .trigger-menu-btn::after {
+        transform: translateY(250%);
+      }
+      
+      .trigger-wrap:hover .trigger-menu-btn::before {
+        transform: translateY(-250%);
+      }
+      
+      .trigger-wrap:hover {
+        cursor: pointer;
+      }
+      
+      .mobil-menu-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        min-height: 100vh;
+        height: auto;
+        z-index: 15;
+        background-color: #124432;
+        padding: 7rem 1rem;
+        opacity: 0;
+        transition: all .5s ease;
+      }
+      
+      .mobil-menu-wrap.open {
+        opacity: 1;
+        z-index: 100;
+      }
+      
+      .trigger-wrap.open .trigger-menu-btn::before {
+        transform-origin: center center;
+        transform: rotate(45deg);
+      }
+      
+      .trigger-wrap.open .trigger-menu-btn::after {
+        transform-origin: center center;
+        transform: rotate(-45deg);
+      }
+      
+      .trigger-wrap.open .trigger-menu-btn {
+        background-color: transparent;
+      }
+      
+      .mobil-menu-wrap .nav-btn,
+      .mobil-menu-wrap .lang-btn,
+      .toggle-nav-bar .nav-btn,
+      .toggle-nav-bar .lang-btn {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        color: white;
+        padding-bottom: 0;
+        border-bottom: none;
+        transform-origin: center center;
+        text-align: center;
+      }
+
+      .toggle-nav-bar .nav-btn,
+      .toggle-nav-bar .lang-btn {
+        font-size: 1rem;
+      }
+      
+      .mobil-menu-wrap .nav-btn:hover,
+      .mobil-menu-wrap .lang-btn:hover,
+      .toggle-nav-bar .nav-btn:hover,
+      .toggle-nav-bar .lang-btn:hover {
+        color: whitesmoke;
+        border-bottom: none;
+        transform: translateY(0) scale(1.1);
+        cursor: pointer;
+        padding-bottom: 0;
+      }
+      
+      @media (min-width: 1200px) {
+        header{
+          padding: 4rem 1rem 1rem;
+          height: auto;
+        }
+        
+        .slogan {
+          width: 30%;
+        }
+        
+        .nav-row {
+          display: flex;
+        }
+        
+        .lang-whole-wrap {
+          display: block;
+        }
+        
+        .trigger-wrap,
+        .mobil-menu-wrap {
+          display: none;
+        }
+      }
+      
+      /* the pecsi */
+      
+      .toggle-nav-bar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 5rem;
+        background-image: url(assets/header_bg.png);
+        background-position: center center;
+        background-repeat: repeat;
+        background-size: auto;
+        z-index: 15;
+        transform: translateY(-100%);
+        transition: all .5s ease;
+      }
+      
+      .toggle-row {
+        height: 100%;
+        margin: 0 15rem;
+        display: none;
+      }
+      
+      @media (min-width: 1200px) {
+        .toggle-row {
+          display: flex;
+        }
+      }
+      
+      .logo {
+        position: absolute;
+        top: 50%;
+        left: 3rem;
+        height: 55%;
+        transform: translateY(-50%);
+      }
+      
+      @media (min-width: 1200px) {
+        .logo {
+          height: 75%;
+        }
+      }
+      
+      .toggle-nav-bar .lang-wrap {
+        height: 5rem;
+        width: 5rem;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+      
+      .toggle-nav-bar .lang-btn {
+        line-height: 5rem;
+      }
+      
+      .toggle-nav-bar .lang-wrap02 {
+        bottom: -5rem;
+      }
+      
+      .toggle-nav-bar .lang-wrap01 {
+        bottom: -10rem;
+      }
+      
+      .up-wrap {
+        position: fixed;
+        top: 60%;
+        right: 0;
+        transform: translateY(-50%) translateX(100%);
+        width: 4rem;
+        height: 4rem;
+        background: rgb(240,230,230);
+        z-index: 15;
+        border: .3rem solid rgb(180,180,180);
+        border-right: none;
+        border-radius: 2rem 0 0 2rem;
+        transition: all .5s ease;
+      }
+      
+      .up-arrow {
+        width: 2rem;
+        position: relative;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .3s ease;
+      }
+      
+      @media (min-width: 1200px) {
+        .up-wrap {
+          width: 6rem;
+        }
+        
+        .up-arrow {
+          width: 3rem;
+        }
+      }
+      
+      .up-wrap:hover {
+        cursor: pointer;
+        transform: scale(1.1) translateY(-50%);
+      }
+      
+      .the-pecsi,
+      .process {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-image: url(assets/body_bg_left.png), url(assets/body_bg_right.png), url(assets/bg_pattern.jpg);
+        background-position: left center, right center, top center;
+        background-repeat: no-repeat, no-repeat, repeat;
+        background-size: auto;
+        background-attachment: fixed;
+        overflow: hidden;
+      }
+
+      .product-title {
+        font-family: "roboto slab";
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: #251a06;
+      }
+      
+      .pils-img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .type {
+        font-family: "roboto slab";
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #251a06;
+      }
+      
+      .text {
+        font-family: "roboto slab";
+        font-weight: 700;
+        font-size: 1rem;
+        color: #124432;
+      }
+      
+      .bigger {
+        font-size: 1.25rem;
+      }
+      
+      .product-row {
+        margin: 0 5rem;
+      }
+      
+      @media (min-width: 1200px) {
+        .product-row {
+          margin: 0 10rem;
+        }
+      }
+      
+      .png {
+        max-width: 1.5rem;
+        position: relative;
+        left: 50%;
+        transform-origin: center center;
+        transform: translateX(-50%);
+        transition: all .3s ease;
+      }
+      
+      .barrel {
+        max-width: 3rem;
+      }
+      
+      .png:hover {
+        transform: scale(1.15) translateX(-50%);
+        cursor: pointer;
+      }
+      
+      /* history */
+      
+      .history {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: transparent;
+      }
+       
+      .schield {
+        max-width: 15rem;
+        position: relative;
+        left: 50%;
+        transform:  translateX(-50%);
+        top: 0;
+      }
+      
+      @media (min-width: 1200px) {
+        .schield {
+          top: 35%;
+          transform: translateY(-50%) translateX(-50%);
+        }
+      }
+      
+      .story-row {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+      
+      .story-title {
+        font-family: "roboto slab";
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: whitesmoke;
+        text-transform: uppercase;
+      }
+      
+      .story-text {
+        font-family: "roboto slab";
+        font-weight: 700;
+        line-height: 1.15rem;
+        color: whitesmoke;
+        font-size: 1rem
+      }
+      
+      @media (min-width:1200px) {
+        .story-title {
+          font-size: 2rem;
+        }
+        
+        .story-text {
+          font-size: 1.05rem;
+          line-height: 1.75rem;
+        }
+      }
+      
+      .wood-bg {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url(assets/wood_bg.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: repeat;
+      }
+      
+      /* process */
+      
+      .process-img {
+        position: relative;
+        width: 70%;
+        left: 15%;
+        margin-top: 3rem;
+      }
+      
+      .process-txt {
+        font-family: "roboto slab";
+        text-align: center;
+        font-size: 1.05rem;
+        line-height: 1.75rem;
+        color: #251a06;
+        font-weight: 700;
+      }
+      
+      /* video */
+      
+      .video {
+        width: 100%;
+        min-height: 100vh;
+        background: transparent;
+        position: relative;
+      }
+      
+      .video-wrap {
+        position: relative;
+        width: 70%;
+        left: 15%;
+      }
+      
+      .video-title {
+        font-family: "roboto slab";
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 700;
+        color: whitesmoke;
+        text-transform: uppercase;
+      }
+      
+      /* contact */
+      
+      .contact {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-image: url(assets/header_bg.png);
+        background-position: top center;
+        background-repeat: repeat;
+        background-size: auto;
+      }
+      
+      .little-title {
+        font-family: "roboto slab";
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: whitesmoke;
+        text-align: center;
+      }
+      
+      .contact-wrap {
+        width: 5rem;
+        height: 5rem;
+        text-align: center;
+        color: whitesmoke;
+        font-size: 2.5rem;
+        line-height: 4.7rem;
+        border: solid .3rem whitesmoke;
+        border-radius: 50%;
+        transition: all .5s ease;
+      }
+      
+      .contact-wrap:hover {
+        cursor: pointer;
+        background: whitesmoke;
+      }
+      
+      i {
+        transition: all .5s ease;
+      }
+      
+      .contact-wrap:hover i {
+        transform: rotateY(360deg);
+        color: #124432;
+      }
+      
+      /* map */
+      
+      .map {
+        margin: 3rem 10rem;
+      }
+      
+      .map-embed {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+      
+      .map-embed iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      
+      /* footer */
+      
+      footer {
+        position: relative;
+        width: 100%;
+        height: 5rem;
+        background-image: url(assets/footer_bg_pattern.jpg);
+        padding: 0 10rem;
+        
+      }
+      
+      .footer-row {
+        width: 100%;
+        height: 5rem;
+      }
+      
+      .footer-text {
+        font-family: "roboto slab";
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-align: center;
+        color: whitesmoke;
+        line-height: 5rem;
+      }
+      
+      .footer-logo {
+        position: relative;
+        height: 70%;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+      }
+      
+      .warning {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5rem;
+        width: 5rem;
+        color: whitesmoke;
+        font-size: 1.25rem;
+        line-height: 5rem;
+        font-weight: 700;
+        text-align: center;
+        background-image: url(assets/header_bg.png);
+        font-family: "roboto slab";
+        z-index: 15;
+      }
+      
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .nav-row,
+      .toggle-row {
+        margin: 0 15rem;
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      
+      <img src="assets/header_slogan.png" alt="" class="img-fluid slogan">
+
+      <img class="img-fluid full-bg" src="assets/full-bg.jpg" alt="">
+      
+      <div class="trigger-wrap">
+        <div class="trigger-menu-btn"></div>
+      </div>
+      
+      <div class="mobil-menu-wrap">
+        <div class="row justify-content-center">
+          <div class="col-7 mb-4">
+            <p class="nav-btn">the pécsi beer</p>
+          </div>
+          <div class="col-7 mb-4">
+            <p class="nav-btn">history of the pécsi beer</p>
+          </div>
+          <div class="col-7 mb-4">
+            <p class="nav-btn">making of</p>
+          </div>
+          <div class="col-7 mb-4">
+            <p class="nav-btn">where can i buy?</p>
+          </div>
+        </div>
+        
+        <div class="row justify-content-center mt-5">
+          <div class="col-2">
+            <p class="lang-btn">hu</p>
+          </div>
+          <div class="col-2">
+            <p class="lang-btn">en</p>
+          </div>
+          <div class="col-2">
+            <p class="lang-btn">de</p>
+          </div>
+        </div>
+      </div>
+        
+      <div class="row justify-content-center nav-row">
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">the pécsi beer</p>
+        </div>
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">history of the pécsi beer</p>
+        </div>
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">making of</p>
+        </div>
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">where can i buy?</p>
+        </div>
+      </div>
+
+      <div class="lang-whole-wrap">
+        <div class="lang-wrap lang-wrap03">
+          <p class="lang-btn">en</p>
+        </div>
+        
+        <div class="lang-wrap lang-wrap01">
+          <p class="lang-btn">de</p>
+        </div>
+      
+        <div class="lang-wrap lang-wrap02">
+          <p class="lang-btn">hu</p>
+        </div>
+      </div>       
+      
+    </header>
+    
+    <div class="toggle-nav-bar">
+      
+      <img class="img-fluid logo" src="assets/logo_header.png" alt="">
+      
+      <div class="row justify-content-center toggle-row">
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">the pécsi beer</p>
+        </div>
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">history of the pécsi beer</p>
+        </div>
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">making of</p>
+        </div>
+        <div class="col-3 align-self-center">
+          <p class="nav-btn">where can i buy?</p>
+        </div>
+      </div>
+      
+      <div class="lang-whole-wrap">
+        <div class="lang-wrap lang-wrap03">
+          <p class="lang-btn">en</p>
+        </div>
+        
+        <div class="lang-wrap lang-wrap01">
+          <p class="lang-btn">de</p>
+        </div>
+      
+        <div class="lang-wrap lang-wrap02">
+          <p class="lang-btn">hu</p>
+        </div>
+      </div> 
+    </div>
+    
+    <div class="the-pecsi">
+      
+    <div class="up-wrap">
+      <img class="img-fluid up-arrow" alt="" src="assets/up-arrow.png">
+    </div>
+
+        <div class="row justify-content-center">
+          <div class="col-10 col-lg-6">
+            <p class="product-title mt-5">premium pils</p>
+          </div>
+          <div class="col-11 col-lg-7 mt-5">
+            <img class="img-fluid pils-img" src="assets/premium-pils.png" alt="">
+          </div>
+        </div>
+        
+        <div class="row mt-5 pl-4 ml-lg-5 mr-lg-5 pl-lg-5 pr-lg-5 product-row">
+          <div class="col-1 pl-4 pr-4">
+            <img class="img-fluid png" src="assets/bottle.png" alt="">          
+          </div>
+          <div class="col-9 col-lg-3">
+            <h3 class="type mb-3">palack 0,5l</h3>
+            <p class="text">Szavatossági idő</p>
+            <p class="text bigger mb-3">6 hónap</p>
+            <p class="text">Alkoholtartalom</p>
+            <p class="text bigger mb-3">4,7 % vol.</p>
+            <p class="text">Balling fok</p>
+            <p class="text bigger">11,6 B°</p>
+          </div>         
+          <div class="col-1 pl-4 pr-4 mt-5 mt-lg-0">
+            <img class="img-fluid png" src="assets/can.png" alt="">          
+          </div>
+          <div class="col-9 col-lg-3 mt-5 mt-lg-0">
+            <h3 class="type mb-3">doboz 0,5l</h3>
+            <p class="text">Szavatossági idő</p>
+            <p class="text bigger mb-3">6 hónap</p>
+            <p class="text">Alkoholtartalom</p>
+            <p class="text bigger mb-3">4,7 % vol.</p>
+            <p class="text">Balling fok</p>
+            <p class="text bigger">11,6 B°</p>
+          </div>
+          <div class="col- p-0 mt-5 mt-lg-0">
+            <img class="img-fluid png barrel" src="assets/barrel.png" alt="">          
+          </div>
+          <div class="col-9 col-lg-3 mt-5 mt-lg-0">
+            <h3 class="type mb-3">hordó 30l</h3>
+            <p class="text">Szavatossági idő</p>
+            <p class="text bigger mb-3">6 hónap</p>
+            <p class="text">Alkoholtartalom</p>
+            <p class="text bigger mb-3">4,7 % vol.</p>
+            <p class="text">Balling fok</p>
+            <p class="text bigger">11,6 B°</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+          <div class="col-6">
+            <p class="product-title">premium lager</p>
+          </div>
+          <div class="col-11 col-lg-7 mt-5"> 
+            <img class="img-fluid pils-img" src="assets/premium-lager.png" alt="">
+          </div>
+        </div>
+        
+        <div class="row mt-5 pl-4 mr-lg-5 ml-lg-5 pl-lg-5 pr-lg-5 product-row mb-5">
+          <div class="col-1 pl-4 pr-4">
+            <img class="img-fluid png" src="assets/bottle.png" alt="">          
+          </div>
+          <div class="col-9 col-lg-3">
+            <h3 class="type mb-3">palack 0,5l</h3>
+            <p class="text">Szavatossági idő</p>
+            <p class="text bigger mb-3">6 hónap</p>
+            <p class="text">Alkoholtartalom</p>
+            <p class="text bigger mb-3">5 % vol.</p>
+            <p class="text">Balling fok</p>
+            <p class="text bigger">11,2 B°</p>
+          </div>         
+          <div class="col-1 pl-4 pr-4 mt-5 mt-lg-0">
+            <img class="img-fluid png" src="assets/can.png" alt="">          
+          </div>
+          <div class="col-9 col-lg-3 mt-5 mt-lg-0">
+            <h3 class="type mb-3">doboz 0,5l</h3>
+            <p class="text">Szavatossági idő</p>
+            <p class="text bigger mb-3">6 hónap</p>
+            <p class="text">Alkoholtartalom</p>
+            <p class="text bigger mb-3">5 % vol.</p>
+            <p class="text">Balling fok</p>
+            <p class="text bigger">11,2 B°</p>
+          </div>
+          <div class="col- p-0 mt-5 mt-lg-0">
+            <img class="img-fluid png barrel" src="assets/barrel.png" alt="">          
+          </div>
+          <div class="col-9 col-lg-3 mt-5 mt-lg-0 mb-3">
+            <h3 class="type mb-3">hordó 30l</h3>
+            <p class="text">Szavatossági idő</p>
+            <p class="text bigger mb-3">6 hónap</p>
+            <p class="text">Alkoholtartalom</p>
+            <p class="text bigger mb-3">5 % vol.</p>
+            <p class="text">Balling fok</p>
+            <p class="text bigger">11,2 B°</p>
+          </div>
+        </div>
+      </div>
+    
+    
+    <div class="history">
+      
+      <div class="row mt-5 story-row mb-5 justify-content-center">
+        <div class="col-12 col-lg-2 mb-4 mb-lg-0">
+          <img class="img-fluid schield" alt="" src="assets/story_symbol.png"> 
+        </div>
+        <div class="col-12 col-lg-7 align-self-center">
+          <h2 class="story-title mb-4 pl-4 pl-lg-5">a pécsi sörfőzde eredete</h2>
+          <p class="story-text p-1 pl-lg-4 mb-5">Lorem ipsum dolor sit amet, ne inani facete vix. Democritum adversarium consequuntur cu per, mucius scriptorem ad sit, ne oporteat honestatis quo. Eos ex clita recusabo persequeris, id errem temporibus eos. Usu feugait democritum ei. Vero mentitum has ei. In pro audiam ornatus, nec alia fastidii laboramus ea. Ex vis enim dolore constituam. Copiosae interpretaris cum no, usu et aliquam deseruisse, has meis porro offendit ad. Et invenire moderatius eos. Vix in summo oblique, cu usu legere deleniti.Labitur adolescens expetendis ad vim, id tation utamur qualisque vel. Vel cu nusquam molestiae gloriatur, at eum eros cibo admodum. Ea quo quas inimicus, ignota malorum at his. Mei eu quem impedit, splendide aliquando democritum cum id. Pro dolores moderatius ei, justo adipisci ne pro. In iuvaret complectitur sit, ea duo principes consectetuer. Laudem mediocrem definitiones nam ne.</p>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="wood-bg"></div>
+    
+    <div class="process">
+      <img class="img-fluid process-img" alt="" src="assets/process_graphics.png">
+      
+      <div class="row justify-content-center">
+        <div class="col-10 mb-5 mt-5">
+          <p class="process-txt">Feugait tractatos pri ne, tota vituperatoribus sea te. An ius fastidii voluptua percipit, nibh qualisque mea cu. Eu elit oporteat nec, eum adipisci patrioque consetetur et, ullum repudiare mel ei. Nonumy vituperatoribus ei his, ius at augue possim sensibus. Qui veritus ullamcorper id, quo cu prompta definitionem. Id maiorum mentitum liberavisse his, id sea omnesque interpretaris. Sed veniam nusquam invidunt te, eos ei mentitum conclusionemque.<br><br>Tractatos eloquentiam ad pri. Cu has ridens nostro tacimates, eam ea paulo sanctus. Id impetus probatus has, id vim reprimique eloquentiam. Mei id purto erat quaerendum.<br><br>Inimicus reprehendunt ex nam, omnesque explicari vel cu, vix periculis ullamcorper id. Populo comprehensam ad per, cum id aliquip admodum insolens. Ne elitr utamur honestatis nam. Quando ullamcorper ne pro. Augue impedit percipit ut mei, tempor argumentum eum at.
+</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="video">
+      <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-10">
+          <h3 class="video-title">a sörfőzde</h3>
+        </div>
+      </div>
+      <div class="embed-responsive embed-responsive-16by9 video-wrap">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4yrtfDlNLEM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <div class="contact">
+      <div class="row justify-content-center pt-5">
+        <div class="col-10">
+          <h3 class="video-title">csatlakozz a közösséghez!</h3>
+          <h6 class="little-title mt-3">A Stílusod egyedi, kívül, belül.</h6>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4 pb-5">
+        <div class="col-1 p-0 m-0">
+          <div class="contact-wrap"><a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a></div>
+        </div>
+        <div class="col-1 p-0 m-0">
+          <div class="contact-wrap"><a href="http://youtube.com"><i class="fab fa-youtube"></i></a></div>
+        </div>
+        <div class="col-1 p-0 m-0">
+          <div class="contact-wrap"><a href="http://instagram.com"><i class="fab fa-instagram"></i></a></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="map">
+      <div class="row justify-content-center">
+        <div class="col-12 mb-5">
+          <h3 class="video-title">elérhetőségeink</h3>
+        </div>
+      </div> 
+      <div class="map-embed">
+         <iframe src="https://www.google.com/maps/d/embed?mid=1Mha5IRUeVGK1xOHWSMn7sAR-qqA" width="640" height="480"></iframe>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="row footer-row justify-content-center">
+        <div class="col-3">
+          <p class="footer-text">Minden jog fentartva!</p>
+        </div>
+        <div class="col-3">
+          <img class="img-fluid footer-logo" src="assets/logo_header.png" alt="">
+        </div>
+        <div class="col-3">
+          <p class="footer-text">Pécsi Sörfőzde 2016</p>
+        </div>
+      </div>
+      
+      <div class="warning">+18</div>
+    </footer>
+  
+    <script>
+      
+      $('.trigger-wrap').on("click", function() {
+        if ($(this).hasClass('open')) {
+          $(this).removeClass("open");
+          $('.mobil-menu-wrap').removeClass('open');
+        } else {
+          $(this).addClass('open');
+          $('.mobil-menu-wrap').addClass('open');
+        }
+      });
+      
+      $('.up-wrap').on('click', function() {
+        window.scrollTo(0,0);
+      });
+      
+      $(window).scroll(function() {
+        var windowScrollTop = $(this).scrollTop();
+        var headerHeight = $('header').height();
+        
+        if(windowScrollTop > headerHeight){
+          $('.toggle-nav-bar').css('transform', 'translateY(0)');
+          $('.the-pecsi-wrap').css("overflow", 'scroll');
+          $('.up-wrap').css("transform", 'translateX(0) translateY(-50%)');
+          $('.trigger-wrap').css('position', 'fixed');
+        } else {
+          $('.toggle-nav-bar').css('transform', 'translateY(-100%)');
+          $(".the-pecsi-wrap").css("overflow", 'hidden');
+          $('.up-wrap').css("transform", 'translateX(100%) translateY(-50%)');
+          $('.trigger-wrap').css('position', 'absolute');
+        }
+      });
+      
+    </script>
+    
+    <!-- Optional JavaScript --> 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
