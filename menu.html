@@ -37,6 +37,12 @@
           font-size: 22px;
         }
       }
+      
+      @media (min-width: 2200px) {
+        html {
+          font-size: 24px;
+        }
+      }
     
      a {
         text-decoration: none;
@@ -233,9 +239,9 @@
         width: 100vw;
         min-height: 100vh;
         height: auto;
-        z-index: 15;
+        z-index: -5;
         background-color: #124432;
-        padding: 7rem 1rem;
+        padding: 5rem 1rem;
         opacity: 0;
         transition: all .5s ease;
       }
@@ -288,6 +294,31 @@
         padding-bottom: 0;
       }
       
+      @media (min-width: 768px) {
+        header {
+          height: auto;
+        }
+        
+        .slogan {
+          width: 50%;
+        }
+        
+        .nav-row {
+          display: flex;
+          margin: 0 3rem;
+          z-index: 15;
+        }
+
+        .lang-whole-wrap {
+          display: block;
+        }
+        
+        .trigger-wrap,
+        .mobil-menu-wrap {
+          display: none;
+        }
+      }
+      
       @media (min-width: 1200px) {
         header{
           padding: 4rem 1rem 1rem;
@@ -299,16 +330,18 @@
         }
         
         .nav-row {
-          display: flex;
+          margin: 0 15rem;
         }
         
-        .lang-whole-wrap {
-          display: block;
+        .mobile-menu-wrap {
+          padding: 7rem 1rem;
         }
-        
-        .trigger-wrap,
-        .mobil-menu-wrap {
-          display: none;
+      }
+      
+      @media (min-width: 1800px) {
+        .slogan {
+          position: absolute;
+          top: 3rem;
         }
       }
       
@@ -335,7 +368,13 @@
         display: none;
       }
       
-      @media (min-width: 1200px) {
+      @media (min-width: 768px) {
+        .toggle-row {
+          margin: 0 3rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
         .toggle-row {
           display: flex;
         }
@@ -347,6 +386,18 @@
         left: 3rem;
         height: 55%;
         transform: translateY(-50%);
+      }
+      
+      @media (min-width: 768px) {
+        .logo {
+          display: none;
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .logo {
+          display: block;
+        }
       }
       
       @media (min-width: 1200px) {
@@ -399,13 +450,13 @@
         transition: all .3s ease;
       }
       
-      @media (min-width: 1200px) {
+      @media (min-width: 768px) {
         .up-wrap {
           width: 6rem;
         }
         
         .up-arrow {
-          width: 3rem;
+          width: 2rem;
         }
       }
       
@@ -422,7 +473,7 @@
         background-image: url(assets/body_bg_left.png), url(assets/body_bg_right.png), url(assets/bg_pattern.jpg);
         background-position: left center, right center, top center;
         background-repeat: no-repeat, no-repeat, repeat;
-        background-size: auto;
+        background-size: 45%, 45%, auto;
         background-attachment: fixed;
         overflow: hidden;
       }
@@ -465,9 +516,32 @@
         margin: 0 5rem;
       }
       
+      @media (min-width: 768px) {
+        .the-pecsi,
+        .process {
+          background-size: 35%, 35%, auto;
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .product-row {
+          margin: 0 7.5rem;
+        }
+        
+        .the-pecsi,
+        .process {
+          background-size: 25%, 25%, auto;
+        }
+      }
+      
       @media (min-width: 1200px) {
         .product-row {
           margin: 0 10rem;
+        }
+        
+        .the-pecsi,
+        .process {
+          background-size: auto;
         }
       }
       
@@ -494,7 +568,7 @@
       .history {
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: auto;
         background: transparent;
       }
        
@@ -541,10 +615,21 @@
         .story-title {
           font-size: 2rem;
         }
+      }
+      
+      @media (min-width: 1800px) {
+        .history {
+          padding: 0 7.5vw;
+        }
         
-        .story-text {
-          font-size: 1.05rem;
-          line-height: 1.75rem;
+        .schield {
+          width: 10rem;
+        }
+      }
+      
+      @media (min-width: 2200px) {
+        .history {
+          padding: 0 10vw;
         }
       }
       
@@ -565,18 +650,71 @@
       
       .process-img {
         position: relative;
-        width: 70%;
-        left: 15%;
+        width: 90%;
+        left: 5%;
         margin-top: 3rem;
       }
       
       .process-txt {
         font-family: "roboto slab";
-        text-align: center;
-        font-size: 1.05rem;
-        line-height: 1.75rem;
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.25rem;
         color: #251a06;
         font-weight: 700;
+      }
+      
+      @media (min-width: 768px) {
+        .story-text,
+        .process-txt {
+          line-height: 1.3rem;
+        }
+        
+        .process-txt {
+          text-align: center;
+        }
+        
+        .process-img {
+          width: 80%;
+          left: 10%;
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .story-text,
+        .process-txt {
+          line-height: 1.55rem;
+        }
+      }
+      
+      @media (min-width: 1200px) {
+        .process-img {
+          width: 70%;
+          left: 15%
+        }
+        
+        .process-txt {
+          font-size: 1.05rem;
+          line-height: 1.75rem;
+          text-align: center;
+        }
+        
+        .story-text {
+          font-size: 1.05rem;
+          line-height: 1.75rem;
+        }
+      }
+      
+      @media (min-width: 1800px) {
+        .process {
+          padding: 0 7.5rem;
+        }
+      }
+      
+      @media (min-width: 2200px) {
+        .process {
+          padding: 0 10vw;
+        }
       }
       
       /* video */
@@ -596,11 +734,24 @@
       
       .video-title {
         font-family: "roboto slab";
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
         font-weight: 700;
         color: whitesmoke;
         text-transform: uppercase;
+      }
+      
+      @media (min-width: 1200px) {
+        .video-title {
+          font-size: 2rem;
+        }
+      }
+      
+      @media (min-width: 1800px) {
+        .video-wrap {
+          width: 60%;
+          left: 20%;
+        }
       }
       
       /* contact */
@@ -633,6 +784,9 @@
         border: solid .3rem whitesmoke;
         border-radius: 50%;
         transition: all .5s ease;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
       }
       
       .contact-wrap:hover {
@@ -649,10 +803,22 @@
         color: #124432;
       }
       
+      @media (min-width: 1800px) {
+        .contact {
+          padding: 0 7.5vw;
+        }
+      }
+      
+      @media (min-width: 2200px) {
+        .contact {
+          padding: 0 10vw;
+        }
+      }
+      
       /* map */
       
       .map {
-        margin: 3rem 10rem;
+        margin: 3rem 1rem;
       }
       
       .map-embed {
@@ -670,29 +836,67 @@
         height: 100%;
       }
       
+      @media (min-width: 528px) {
+        .map {
+          padding-left: 3rem;
+          padding-right: 3rem;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .map {
+          padding-left: 5rem;
+          padding-right: 5rem;
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .map {
+          padding-left: 7.5rem;
+          padding-right: 7.5rem;
+        }
+      }
+      
+      @media (min-width: 1200px) {
+        .map {
+          padding: 3rem 10rem;
+        }
+      }
+      
+      @media (min-width: 1800px) {
+        .map {
+          padding: 3rem 10vw;
+        }
+      }
+      
+      @media (min-width: 2200px) {
+        .map {
+          padding: 3rem 15vw;
+        }
+      }
+      
       /* footer */
       
       footer {
         position: relative;
         width: 100%;
-        height: 5rem;
+        height: auto;
         background-image: url(assets/footer_bg_pattern.jpg);
-        padding: 0 10rem;
-        
+        padding: 0 1rem;
       }
       
       .footer-row {
         width: 100%;
-        height: 5rem;
+        height: auto;
       }
       
       .footer-text {
         font-family: "roboto slab";
         font-weight: 700;
-        font-size: 1.05rem;
+        font-size: 1rem;
         text-align: center;
         color: whitesmoke;
-        line-height: 5rem;
+        line-height: 1.25rem;
       }
       
       .footer-logo {
@@ -717,6 +921,45 @@
         background-image: url(assets/header_bg.png);
         font-family: "roboto slab";
         z-index: 15;
+        display: none;
+      }
+      
+      .w5-logo {
+        position: relative;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 6rem;
+      }
+      
+      .w5-logo:hover {
+        cursor: pointer;
+      }
+      
+      @media (min-width: 768px) {
+        footer {
+          height: 5rem;
+        }
+        
+        .footer-row {
+          height: 5rem;
+        }
+        
+        .footer-text {
+          font-size: 1.05rem;
+          line-height: 5rem;
+        }
+        
+        .w5-logo {
+          position: absolute;
+          left: 100%;
+          transform: translateX(calc(-100% - 1rem));
+          height: 4rem;
+        }
+        
+        .warning {
+          display: block;
+        }
       }
       
       .row {
@@ -727,6 +970,61 @@
       .nav-row,
       .toggle-row {
         margin: 0 15rem;
+      }
+      
+      @media (min-width: 768px) {
+        .nav-row,
+        .toggle-row {
+          margin: 0 3rem;
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .nav-row,
+        .toggle-row {
+          margin: 0 8rem;
+        }
+        
+        w5-logo {
+          transform: translateX(calc(-100% - 2rem));
+        }
+      }
+      
+      @media (min-width: 1200px) {
+        .nav-row,
+        .toggle-row {
+          margin: 0 15rem;
+        }
+        
+        .w5-logo {
+          transform: translateX(calc(-100% - 4rem));
+        }
+      }
+
+      @media (min-width: 1800px) {
+        .nav-row,
+        .toggle-row,
+        .product-row {
+          margin: 0 15vw!important;
+        }
+        
+        .product-row {
+          margin-top: 2rem!important;
+          margin-bottom: 2rem!important;
+        }
+      }
+      
+      @media (min-width: 2200px) {
+        .nav-row,
+        .toggle-row,
+        .product-row {
+          margin: 0 20vw!important;
+        }
+        
+        .product-row {
+          margin-top: 3rem!important;
+          margin-bottom: 3rem!important;
+        }
       }
       
     </style>
@@ -746,16 +1044,16 @@
       <div class="mobil-menu-wrap">
         <div class="row justify-content-center">
           <div class="col-7 mb-4">
-            <p class="nav-btn">the pécsi beer</p>
+            <p class="nav-btn the-pecsi-btn-mobil">a pécsi sör</p>
           </div>
           <div class="col-7 mb-4">
-            <p class="nav-btn">history of the pécsi beer</p>
+            <p class="nav-btn history-btn-mobil">a pécsi sör története</p>
           </div>
           <div class="col-7 mb-4">
-            <p class="nav-btn">making of</p>
+            <p class="nav-btn making-btn-mobil">az elkészítés folyamata</p>
           </div>
           <div class="col-7 mb-4">
-            <p class="nav-btn">where can i buy?</p>
+            <p class="nav-btn where-btn-mobil">hol kapható?</p>
           </div>
         </div>
         
@@ -774,22 +1072,22 @@
         
       <div class="row justify-content-center nav-row">
         <div class="col-3 align-self-center">
-          <p class="nav-btn">the pécsi beer</p>
+          <p class="nav-btn the-pecsi-btn">a pécsi sör</p>
         </div>
         <div class="col-3 align-self-center">
-          <p class="nav-btn">history of the pécsi beer</p>
+          <p class="nav-btn history-btn">a pécsi sör története</p>
         </div>
         <div class="col-3 align-self-center">
-          <p class="nav-btn">making of</p>
+          <p class="nav-btn making-btn">az elkészítés folyamata</p>
         </div>
         <div class="col-3 align-self-center">
-          <p class="nav-btn">where can i buy?</p>
+          <p class="nav-btn where-btn">hol kapható?</p>
         </div>
       </div>
 
       <div class="lang-whole-wrap">
         <div class="lang-wrap lang-wrap03">
-          <p class="lang-btn">en</p>
+          <p class="lang-btn">hu</p>
         </div>
         
         <div class="lang-wrap lang-wrap01">
@@ -797,7 +1095,7 @@
         </div>
       
         <div class="lang-wrap lang-wrap02">
-          <p class="lang-btn">hu</p>
+          <p class="lang-btn">en</p>
         </div>
       </div>       
       
@@ -809,22 +1107,22 @@
       
       <div class="row justify-content-center toggle-row">
         <div class="col-3 align-self-center">
-          <p class="nav-btn">the pécsi beer</p>
+          <p class="nav-btn the-pecsi-btn">a pécsi sör</p>
         </div>
         <div class="col-3 align-self-center">
-          <p class="nav-btn">history of the pécsi beer</p>
+          <p class="nav-btn history-btn">a pécsi sör története</p>
         </div>
         <div class="col-3 align-self-center">
-          <p class="nav-btn">making of</p>
+          <p class="nav-btn making-btn">az elkészítés folyamata</p>
         </div>
         <div class="col-3 align-self-center">
-          <p class="nav-btn">where can i buy?</p>
+          <p class="nav-btn where-btn">hol kapható?</p>
         </div>
       </div>
       
       <div class="lang-whole-wrap">
         <div class="lang-wrap lang-wrap03">
-          <p class="lang-btn">en</p>
+          <p class="lang-btn">hu</p>
         </div>
         
         <div class="lang-wrap lang-wrap01">
@@ -832,7 +1130,7 @@
         </div>
       
         <div class="lang-wrap lang-wrap02">
-          <p class="lang-btn">hu</p>
+          <p class="lang-btn">en</p>
         </div>
       </div> 
     </div>
@@ -852,11 +1150,11 @@
           </div>
         </div>
         
-        <div class="row mt-5 pl-4 ml-lg-5 mr-lg-5 pl-lg-5 pr-lg-5 product-row">
+        <div class="row mt-5 pl-4 ml-lg-5 mr-lg-5 pl-lg-5 pr-lg-5 product-row ml-sm-4">
           <div class="col-1 pl-4 pr-4">
             <img class="img-fluid png" src="assets/bottle.png" alt="">          
           </div>
-          <div class="col-9 col-lg-3">
+          <div class="col-10 col-md-3 col-lg-3">
             <h3 class="type mb-3">palack 0,5l</h3>
             <p class="text">Szavatossági idő</p>
             <p class="text bigger mb-3">6 hónap</p>
@@ -865,10 +1163,10 @@
             <p class="text">Balling fok</p>
             <p class="text bigger">11,6 B°</p>
           </div>         
-          <div class="col-1 pl-4 pr-4 mt-5 mt-lg-0">
+          <div class="col-1 pl-4 pr-4 mt-5 mt-md-0">
             <img class="img-fluid png" src="assets/can.png" alt="">          
           </div>
-          <div class="col-9 col-lg-3 mt-5 mt-lg-0">
+          <div class="col-10 col-md-3 mt-5 mt-md-0">
             <h3 class="type mb-3">doboz 0,5l</h3>
             <p class="text">Szavatossági idő</p>
             <p class="text bigger mb-3">6 hónap</p>
@@ -877,10 +1175,10 @@
             <p class="text">Balling fok</p>
             <p class="text bigger">11,6 B°</p>
           </div>
-          <div class="col- p-0 mt-5 mt-lg-0">
+          <div class="col-1 pl-4 pr-4 mt-5 mt-md-0">
             <img class="img-fluid png barrel" src="assets/barrel.png" alt="">          
           </div>
-          <div class="col-9 col-lg-3 mt-5 mt-lg-0">
+          <div class="col-10 col-md-3 mt-5 mt-md-0">
             <h3 class="type mb-3">hordó 30l</h3>
             <p class="text">Szavatossági idő</p>
             <p class="text bigger mb-3">6 hónap</p>
@@ -900,11 +1198,11 @@
           </div>
         </div>
         
-        <div class="row mt-5 pl-4 mr-lg-5 ml-lg-5 pl-lg-5 pr-lg-5 product-row mb-5">
+        <div class="row mt-5 pl-4 mr-lg-5 ml-lg-5 pl-lg-5 pr-lg-5 product-row mb-5 ml-sm-4 ">
           <div class="col-1 pl-4 pr-4">
             <img class="img-fluid png" src="assets/bottle.png" alt="">          
           </div>
-          <div class="col-9 col-lg-3">
+          <div class="col-10 col-md-3">
             <h3 class="type mb-3">palack 0,5l</h3>
             <p class="text">Szavatossági idő</p>
             <p class="text bigger mb-3">6 hónap</p>
@@ -913,10 +1211,10 @@
             <p class="text">Balling fok</p>
             <p class="text bigger">11,2 B°</p>
           </div>         
-          <div class="col-1 pl-4 pr-4 mt-5 mt-lg-0">
+          <div class="col-1 pl-4 pr-4 mt-5 mt-md-0">
             <img class="img-fluid png" src="assets/can.png" alt="">          
           </div>
-          <div class="col-9 col-lg-3 mt-5 mt-lg-0">
+          <div class="col-10 col-md-3 mt-5 mt-md-0">
             <h3 class="type mb-3">doboz 0,5l</h3>
             <p class="text">Szavatossági idő</p>
             <p class="text bigger mb-3">6 hónap</p>
@@ -925,10 +1223,10 @@
             <p class="text">Balling fok</p>
             <p class="text bigger">11,2 B°</p>
           </div>
-          <div class="col- p-0 mt-5 mt-lg-0">
+          <div class="col-1 pl-4 pr-4 mt-5 mt-md-0">
             <img class="img-fluid png barrel" src="assets/barrel.png" alt="">          
           </div>
-          <div class="col-9 col-lg-3 mt-5 mt-lg-0 mb-3">
+          <div class="col-10 col-md-3 mt-5 mt-md-0 mb-3">
             <h3 class="type mb-3">hordó 30l</h3>
             <p class="text">Szavatossági idő</p>
             <p class="text bigger mb-3">6 hónap</p>
@@ -948,8 +1246,8 @@
           <img class="img-fluid schield" alt="" src="assets/story_symbol.png"> 
         </div>
         <div class="col-12 col-lg-7 align-self-center">
-          <h2 class="story-title mb-4 pl-4 pl-lg-5">a pécsi sörfőzde eredete</h2>
-          <p class="story-text p-1 pl-lg-4 mb-5">Lorem ipsum dolor sit amet, ne inani facete vix. Democritum adversarium consequuntur cu per, mucius scriptorem ad sit, ne oporteat honestatis quo. Eos ex clita recusabo persequeris, id errem temporibus eos. Usu feugait democritum ei. Vero mentitum has ei. In pro audiam ornatus, nec alia fastidii laboramus ea. Ex vis enim dolore constituam. Copiosae interpretaris cum no, usu et aliquam deseruisse, has meis porro offendit ad. Et invenire moderatius eos. Vix in summo oblique, cu usu legere deleniti.Labitur adolescens expetendis ad vim, id tation utamur qualisque vel. Vel cu nusquam molestiae gloriatur, at eum eros cibo admodum. Ea quo quas inimicus, ignota malorum at his. Mei eu quem impedit, splendide aliquando democritum cum id. Pro dolores moderatius ei, justo adipisci ne pro. In iuvaret complectitur sit, ea duo principes consectetuer. Laudem mediocrem definitiones nam ne.</p>
+          <h2 class="story-title mb-4 pl-4 pl-lg-5 pl-sm-5 ml-sm-3">a pécsi sörfőzde eredete</h2>
+          <p class="story-text p-1 pl-lg-4 mb-4 pl-sm-5 pr-sm-5">Lorem ipsum dolor sit amet, ne inani facete vix. Democritum adversarium consequuntur cu per, mucius scriptorem ad sit, ne oporteat honestatis quo. Eos ex clita recusabo persequeris, id errem temporibus eos. Usu feugait democritum ei. Vero mentitum has ei. In pro audiam ornatus, nec alia fastidii laboramus ea. Ex vis enim dolore constituam. Copiosae interpretaris cum no, usu et aliquam deseruisse, has meis porro offendit ad. Et invenire moderatius eos. Vix in summo oblique, cu usu legere deleniti.Labitur adolescens expetendis ad vim, id tation utamur qualisque vel. Vel cu nusquam molestiae gloriatur, at eum eros cibo admodum. Ea quo quas inimicus, ignota malorum at his. Mei eu quem impedit, splendide aliquando democritum cum id. Pro dolores moderatius ei, justo adipisci ne pro. In iuvaret complectitur sit, ea duo principes consectetuer. Laudem mediocrem definitiones nam ne.</p>
         </div>
       </div>
 
@@ -961,7 +1259,7 @@
       <img class="img-fluid process-img" alt="" src="assets/process_graphics.png">
       
       <div class="row justify-content-center">
-        <div class="col-10 mb-5 mt-5">
+        <div class="col-12 col-md-10 pl-3 pr-3 mb-5 mt-5 pl-sm-5 pr-sm-5">
           <p class="process-txt">Feugait tractatos pri ne, tota vituperatoribus sea te. An ius fastidii voluptua percipit, nibh qualisque mea cu. Eu elit oporteat nec, eum adipisci patrioque consetetur et, ullum repudiare mel ei. Nonumy vituperatoribus ei his, ius at augue possim sensibus. Qui veritus ullamcorper id, quo cu prompta definitionem. Id maiorum mentitum liberavisse his, id sea omnesque interpretaris. Sed veniam nusquam invidunt te, eos ei mentitum conclusionemque.<br><br>Tractatos eloquentiam ad pri. Cu has ridens nostro tacimates, eam ea paulo sanctus. Id impetus probatus has, id vim reprimique eloquentiam. Mei id purto erat quaerendum.<br><br>Inimicus reprehendunt ex nam, omnesque explicari vel cu, vix periculis ullamcorper id. Populo comprehensam ad per, cum id aliquip admodum insolens. Ne elitr utamur honestatis nam. Quando ullamcorper ne pro. Augue impedit percipit ut mei, tempor argumentum eum at.
 </p>
         </div>
@@ -974,26 +1272,26 @@
           <h3 class="video-title">a sörfőzde</h3>
         </div>
       </div>
-      <div class="embed-responsive embed-responsive-16by9 video-wrap">
+      <div class="embed-responsive embed-responsive-16by9 video-wrap pb-5">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/4yrtfDlNLEM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
     
     <div class="contact">
-      <div class="row justify-content-center pt-5">
-        <div class="col-10">
+      <div class="row justify-content-center pt-5 mt-5">
+        <div class="col-12 col-md-10">
           <h3 class="video-title">csatlakozz a közösséghez!</h3>
           <h6 class="little-title mt-3">A Stílusod egyedi, kívül, belül.</h6>
         </div>
       </div>
-      <div class="row justify-content-center mt-4 pb-5">
-        <div class="col-1 p-0 m-0">
+      <div class="row justify-content-center mt-4 pb-5 ml-sm-5 mr-sm-5 ml-md-0 mr-md-0">
+        <div class="col-12 col-sm-3 col-md-2 p-0 m-0 mt-sm-3 mt-md-0">
           <div class="contact-wrap"><a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a></div>
         </div>
-        <div class="col-1 p-0 m-0">
+        <div class="col-12 col-sm-3 col-md-2 p-0 m-0 mt-3 mt-md-0">
           <div class="contact-wrap"><a href="http://youtube.com"><i class="fab fa-youtube"></i></a></div>
         </div>
-        <div class="col-1 p-0 m-0">
+        <div class="col-12 col-sm-3 col-md-2 p-0 m-0 mt-3 mt-md-0">
           <div class="contact-wrap"><a href="http://instagram.com"><i class="fab fa-instagram"></i></a></div>
         </div>
       </div>
@@ -1012,18 +1310,19 @@
     
     <footer>
       <div class="row footer-row justify-content-center">
-        <div class="col-3">
+        <div class="col-10 col-md-4 col-lg-3 mt-3 mt-md-0">
           <p class="footer-text">Minden jog fentartva!</p>
         </div>
-        <div class="col-3">
+        <div class="col-10 col-md-3">
           <img class="img-fluid footer-logo" src="assets/logo_header.png" alt="">
         </div>
-        <div class="col-3">
+        <div class="col-10 col-md-4 col-lg-3 mb-3 mb-md-0">
           <p class="footer-text">Pécsi Sörfőzde 2016</p>
         </div>
       </div>
       
       <div class="warning">+18</div>
+      <a href="http://w5labs.com"><img class="w5-logo" src="assets/w5labs.png" alt=""></a>
     </footer>
   
     <script>
@@ -1039,7 +1338,40 @@
       });
       
       $('.up-wrap').on('click', function() {
-        window.scrollTo(0,0);
+        setTimeout(function() {
+          $('html, body').animate({
+            scrollTop: ($('header').offset().top)
+        }, 750);
+      });
+      });
+      
+      $('.the-pecsi-btn, .the-pecsi-btn-mobil').on("click", function() {
+        $('html, body').animate({
+          scrollTop: ($('.the-pecsi').offset().top)
+        }, 500);
+      });
+      
+      $('.the-pecsi-btn-mobil, .history-btn-mobil, .making-btn-mobil, .where-btn-mobil').on("click", function() {
+        $('.mobil-menu-wrap').removeClass('open');
+        $('.trigger-wrap').removeClass('open');
+      });
+      
+      $('.history-btn, .history-btn-mobil').on("click", function() {
+        $('html, body').animate({
+          scrollTop: ($('.history').offset().top)
+        }, 500);
+      });
+      
+      $('.making-btn, .making-btn-mobil').on("click", function() {
+        $('html, body').animate({
+          scrollTop: ($('.process').offset().top)
+        }, 500);
+      });
+      
+      $('.where-btn, .where-btn-mobil').on("click", function() {
+        $('html, body').animate({
+          scrollTop: ($('.map').offset().top)
+        }, 500);
       });
       
       $(window).scroll(function() {
