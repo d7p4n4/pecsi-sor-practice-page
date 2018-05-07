@@ -156,14 +156,14 @@
     <div class="wrapper">
       <div class="row justify-content-center">
         <div class="col-12">
-          <p class="question">Elmúltál már 18 éves?</p>
+          <p class="question">Are you 18?</p>
         </div>
         
         <div class="col-12 col-lg-4 mt-4">
-          <div class="answer answer-yes">Igen</div>
+          <div class="answer answer-yes">Yes</div>
         </div>
         <div class="col-12 col-lg-4 mt-4">
-          <div class="answer answer-right answer-no">Nem</div>
+          <div class="answer answer-right answer-no">No</div>
         </div>
       </div>
     </div>
@@ -171,11 +171,11 @@
     <script>
     
       $('.answer-yes').on('click', function() {
-        window.location.href = "https://d7p4n4.github.io/pecsi-sor-practice-page/menu.html";
+        window.location.href = "https://d7p4n4.github.io/pecsi-sor-practice-page/menu-en.html";
       });
       
       $('.answer-no').on('click', function() {
-        $('.question').html("Sajnáljuk, túl fiatal vagy.");
+        $('.question').html("Sorry, you are too young.");
         setTimeout(function() {
           window.location.href = "http://google.com";
         }, 1500);
